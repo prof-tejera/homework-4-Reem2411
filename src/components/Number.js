@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid #313131;
   width: 60px;
+  background: #313131;
+  color: white;
 `;
 
 class Number extends Component {

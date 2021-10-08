@@ -20,6 +20,8 @@ class Calculator extends Component {
   };
 
   handleOperatorClick = (operator) => {
+    // I was trying to reset the calculator screen after result is shown. 
+    // this.setState({ first: null, second: null, operator: null });
     if (operator === "=") {
       const first = parseInt(this.state.first);
       const second = parseInt(this.state.second);
@@ -46,28 +48,38 @@ class Calculator extends Component {
     return (
       <>
         <Screen value={this.getScreenValue()} />
-        <div style={{ display: "flex" }}>
-          <div>
-            <Number value={0} onClick={this.handleNumberClick} />
-            <Number value={1} onClick={this.handleNumberClick} />
-            <Number value={2} onClick={this.handleNumberClick} />
-            <Number value={3} onClick={this.handleNumberClick} />
-            <Number value={4} onClick={this.handleNumberClick} />
-            <Number value={5} onClick={this.handleNumberClick} />
-            <Number value={6} onClick={this.handleNumberClick} />
+          
+          <div style={{  display: "inline-block", float: 'left'  }}>  
+            <div style={{ display: "inline-block" }}>
             <Number value={7} onClick={this.handleNumberClick} />
+            <Number value={4} onClick={this.handleNumberClick} />
+            <Number value={1} onClick={this.handleNumberClick} />
+            <Operator style={{background: "#A0A0A0"}} value="clear" onClick={this.handleOperatorClick} />
+
+            </div>
+            <div style={{ display: "inline-block" }}>
             <Number value={8} onClick={this.handleNumberClick} />
+            <Number value={5} onClick={this.handleNumberClick} />
+            <Number value={2} onClick={this.handleNumberClick} />
+            <Number value={0} onClick={this.handleNumberClick} />
+
+            </div>
+            <div style={{ display: "inline-block" }}>
             <Number value={9} onClick={this.handleNumberClick} />
+            <Number value={6} onClick={this.handleNumberClick} />
+            <Number value={3} onClick={this.handleNumberClick} />
+            <Operator value="=" onClick={this.handleOperatorClick} />
+
+            </div>     
           </div>
-          <div style={{ paddingLeft: 10 }}>
+
+          <div style={{ float: "left"  }}>
             <Operator value="+" onClick={this.handleOperatorClick} />
             <Operator value="/" onClick={this.handleOperatorClick} />
             <Operator value="x" onClick={this.handleOperatorClick} />
             <Operator value="-" onClick={this.handleOperatorClick} />
-            <Operator value="=" onClick={this.handleOperatorClick} />
-            <Operator value="clear" onClick={this.handleOperatorClick} />
           </div>
-        </div>
+          
       </>
     );
   }
