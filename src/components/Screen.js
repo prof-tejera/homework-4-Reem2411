@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   border: 1px solid black;
-  width: 300px;
+  width: 325px;
   height: 70px;
+  background: black;
   text-align: right;
-  margin-bottom: 10px;
+  color: white; 
 `;
 
 class Screen extends Component {
